@@ -1,0 +1,429 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --ring: 215 20.2% 65.1%;
+
+        --radius: 0.5rem;
+
+        --card-shine-opacity: .3;
+        --card-background-opacity: 1;
+        --card-shine-gradient: conic-gradient(from 225deg at 50% 50%, rgba(16, 185, 129, 0) 0deg, #10B981 25deg, #EDFAF6 285deg, #FFFFFF 345deg, rgba(16, 185, 129, 0) 360deg);
+        --card-tile-color: rgba(16, 185, 129, 0.08);
+        --card-line-color: #E9E9E7;
+
+        --modal: 0 0% 100%;
+        --modal-foreground: 0, 0%, 87%;
+
+        --background3: 0 0% 100%;
+        --foreground3: 0, 0%, 7%;
+
+        --muted3: 210 40% 96.1%;
+        --muted-foreground3: 215.4 16.3% 46.9%;
+
+        --popover3: 0 0% 100%;
+        --popover3-foreground: 0, 0%, 7%;
+
+        --card3: 0 0% 100%;
+        --card3-foreground: 0, 0%, 7%;
+
+        --border3: 214.3 31.8% 91.4%;
+        --input3: 214.3 31.8% 91.4%;
+     
+        --table3: 0 0% 100%;
+        --table3-foreground: 0, 0%, 87%;
+
+        --black3: 0, 0%, 87%;
+        --main-blue: 208, 99%, 65%;
+
+        --white3: 0, 0%, 0%;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 85.7% 97.3%;
+
+        --ring: 217.2 32.6% 17.5%;
+
+        --card-shine-opacity: .1;
+        --card-background-opacity: .5;
+        --card-shine-gradient: conic-gradient(from 205deg at 50% 50%, rgba(16, 185, 129, 0) 0deg, #10B981 25deg, rgba(52, 211, 153, 0.18) 295deg, rgba(16, 185, 129, 0) 360deg);
+        --card-tile-color: rgba(16, 185, 129, 0.05);
+        --card-line-color: #2A2B2C;
+
+        --modal: 0, 0%, 2%;
+        --modal-foreground: 0, 0%, 7%;
+
+        --muted3: 217, 33%, 17%;
+        --muted3-foreground: 215 20.2% 65.1%;
+
+        --background3: 0, 0%, 7%;
+        --foreground3: 210 40% 98%;
+
+        --popover3: 0, 0%, 7%;
+        --popover3-foreground: 210 40% 98%;
+
+        --card3: 0, 0%, 7%;
+        --card3-foreground: 210 40% 98%;
+
+        --border3: 217, 33%, 17%;
+        --input3: 217, 33%, 17%;
+
+        --table3: 0, 0%, 0%;
+        --table3-foreground: 0, 0%, 7%;
+
+        --black3: 0, 0%, 2%;
+        --bg-blue: 208, 99%, 65%;
+
+        --white3: 0, 0%, 100%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        /* background-color: #020817; */
+        background-color: #060606;
+        color: var(--background);
+        font-family: '__Roboto_Mono_ef9641_400', 'Roboto Mono', monospace;
+    }
+
+
+    ol[aria-label="Photographs"] {
+        margin: .375rem;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: .375rem;
+    }
+
+    ol[aria-label="Photographs"] img {
+        display: block;
+        max-width: 100%;
+        width: 15rem;
+        height: auto;
+        contain: layout;
+    }
+
+    figure {
+        margin: 0;
+        padding: 0 .5rem;
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    figure img {
+        display: block;
+        max-width: 100%;
+        max-height: 74vh;
+        margin-right: auto;
+        margin-left: auto;
+        contain: layout;
+    }
+
+    figcaption {
+        position: relative;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        text-align: left;
+        line-height: 1.375;
+    }
+
+    figcaption h2,
+    figcaption div,
+    figcaption dl {
+        contain: layout;
+    }
+
+    figcaption h2 {
+        view-transition-name: photo-heading;
+    }
+
+    figcaption div {
+        view-transition-name: photo-location-time;
+    }
+
+    figcaption dl {
+        view-transition-name: photo-meta;
+    }
+
+    /* Enter */
+    ::view-transition-new(photo-heading):only-child,
+    ::view-transition-new(photo-location-time):only-child,
+    ::view-transition-new(photo-meta):only-child {
+        animation: 300ms ease var(--animation-delay, 0s) both fade-in,
+            300ms ease var(--animation-delay, 0s) both slide-up;
+    }
+
+    ::view-transition-new(photo-heading):only-child {
+        --animation-delay: 50ms;
+    }
+
+    ::view-transition-new(photo-location-time):only-child {
+        --animation-delay: 100ms;
+    }
+
+    ::view-transition-new(photo-meta):only-child {
+        --animation-delay: 150ms;
+    }
+
+    /* Exit */
+    ::view-transition-old(photo-heading):only-child,
+    ::view-transition-old(photo-location-time):only-child,
+    ::view-transition-old(photo-meta):only-child {
+        animation: 200ms ease var(--animation-delay, 0s) both fade-out,
+            200ms ease var(--animation-delay, 0s) both slide-down;
+    }
+
+    ::view-transition-old(photo-heading):only-child {
+        --animation-delay: 150ms;
+    }
+
+    ::view-transition-old(photo-location-time):only-child {
+        --animation-delay: 100ms;
+    }
+
+    ::view-transition-old(photo-meta):only-child {
+        --animation-delay: 50ms;
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0
+        }
+
+        100% {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade-out {
+        0% {
+            opacity: 1
+        }
+
+        100% {
+            opacity: 0
+        }
+    }
+
+    @keyframes slide-up {
+        0% {
+            transform: translateY(2.5rem)
+        }
+
+        100% {
+            transform: translateY(0)
+        }
+    }
+
+    @keyframes slide-down {
+        0% {
+            transform: translateY(0)
+        }
+
+        100% {
+            transform: translateY(2.5rem)
+        }
+    }
+
+    figcaption::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 2.25rem;
+        height: 2px;
+        background-color: black;
+    }
+
+    figure h2 {
+        margin: 0;
+        font-size: 1em;
+    }
+
+    figure h2 a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    figure dl {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    figure dt,
+    figure dd {
+        margin: 0;
+        display: inline;
+        font-size: 1em;
+        color: #666;
+    }
+
+    figure dt {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    figure dd+dt+dd {
+        margin-left: .375rem;
+    }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.collapse-tableRow td:nth-child(1){
+    display: flex;
+    padding: 14px 8px;
+}
+
+.card .background {
+  mask-image: radial-gradient(circle at 45% 0%, black 0%, black 0%, transparent 100%);
+}
+.card .background .tiles .tile {
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+.card .background .tiles .tile.tile-4, .card .background .tiles .tile.tile-6, .card .background .tiles .tile.tile-10 {
+  animation-delay: -2s;
+}
+.card .background .tiles .tile.tile-3, .card .background .tiles .tile.tile-5, .card .background .tiles .tile.tile-8 {
+  animation-delay: -4s;
+}
+.card .background .tiles .tile.tile-2, .card .background .tiles .tile.tile-9 {
+  animation-delay: -6s;
+}
+@keyframes tile {
+  0%, 12.5%, 100% {
+    opacity: 1;
+  }
+  25%, 82.5% {
+    opacity: 0;
+  }
+}
+.card:hover .background .tiles .tile {
+  animation-name: tile;
+}
+.card:hover .background .line.line-1:before, .card:hover .background .line.line-1:after {
+  transition-delay: 0s;
+}
+.card:hover .background .line.line-2:before, .card:hover .background .line.line-2:after {
+  transition-delay: 0.15s;
+}
+.card:hover .background .line.line-3:before, .card:hover .background .line.line-3:after {
+  transition-delay: 0.3s;
+}
+
+.dashboard-tablebody tr td:nth-child(6),
+.dashboard-table tr th:nth-child(6),
+.dashboard-table tr th:nth-child(7),
+.dashboard-tablebody tr td:first-child,
+.dashboard-table tr th:first-child{
+    min-width: 130px;
+    width: 180px;
+}
+.dashboard-tablebody tr td:nth-child(6),
+.dashboard-tablebody tr td:first-child,
+.dashboard-tablebody tr td:last-child{
+ background-color: hsl(var(--table3-foreground));
+}
+.dashboard-tablebody tr:first-child td:first-child,
+.dashboard-tablebody tr:first-child td:last-child,
+.dashboard-tablebody tr:first-child td:nth-child(6){
+    border-radius: 20px 20px 0 0;
+}
+.dashboard-tablebody tr:last-child td:first-child,
+.dashboard-tablebody tr:last-child td:last-child,
+.dashboard-tablebody tr:last-child td:nth-child(6){
+    border-radius: 0px 0px 20px 20px;
+}
+
+.right-card .minus-btn{
+    display: none;
+}
